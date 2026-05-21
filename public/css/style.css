@@ -1,0 +1,351 @@
+body{
+    background-color: pink;
+    padding-top: 6.2rem;
+}
+
+.wl-flash-stack {
+    margin: 0.5rem 0 1.25rem;
+}
+
+.wl-flash {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    border: 0;
+    border-radius: 18px;
+    padding: 1rem 1rem 1rem 1.05rem;
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
+}
+
+.wl-flash--success {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    color: #065f46;
+}
+
+.wl-flash--error {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    color: #991b1b;
+}
+
+.wl-flash__icon {
+    width: 2.6rem;
+    height: 2.6rem;
+    flex: 0 0 2.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.wl-flash__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.wl-flash__title {
+    margin: 0 0 0.2rem;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.wl-flash__text {
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.wl-flash__close {
+    margin-left: auto;
+    opacity: 0.65;
+}
+
+.wl-flash__close:hover {
+    opacity: 1;
+}
+
+/* =========================
+   Advanced Navbar Styling
+   ========================= */
+:root {
+    --nav-bg: rgba(15, 23, 42, 0.72);
+    --nav-border: rgba(255, 255, 255, 0.18);
+    --nav-text: #f8fafc;
+    --nav-muted: #cbd5e1;
+    --nav-accent: #22d3ee;
+    --nav-accent-2: #0ea5e9;
+    --nav-shadow: 0 12px 30px rgba(2, 6, 23, 0.35);
+}
+
+nav.navbar {
+    position: fixed;
+    top: 0.75rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1.5rem;
+    margin: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--nav-bg), rgba(30, 41, 59, 0.75));
+    border: 1px solid var(--nav-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--nav-shadow);
+}
+
+nav.navbar .brand,
+nav.navbar .logo,
+nav.navbar .navbar-brand {
+    color: var(--nav-text);
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav.navbar ul,
+nav.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav.navbar a {
+    position: relative;
+    color: var(--nav-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.96rem;
+    padding: 0.58rem 0.82rem;
+    border-radius: 10px;
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+nav.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: 0.32rem;
+    height: 2px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--nav-accent), var(--nav-accent-2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+nav.navbar a:hover,
+nav.navbar a:focus-visible {
+    color: var(--nav-text);
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+nav.navbar a:hover::after,
+nav.navbar a:focus-visible::after,
+nav.navbar .active::after,
+nav.navbar a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+nav.navbar .active,
+nav.navbar a[aria-current="page"] {
+    color: var(--nav-text);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav.navbar .btn,
+nav.navbar .nav-btn,
+nav.navbar button {
+    border: 0;
+    outline: 0;
+    color: #062033;
+    background: linear-gradient(135deg, #67e8f9, #38bdf8);
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(56, 189, 248, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+nav.navbar .btn:hover,
+nav.navbar .nav-btn:hover,
+nav.navbar button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(56, 189, 248, 0.42);
+    filter: brightness(1.03);
+}
+
+nav.navbar .btn:active,
+nav.navbar .nav-btn:active,
+nav.navbar button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    body {
+        padding-top: 5.6rem;
+    }
+
+    .wl-flash {
+        padding: 0.9rem;
+    }
+
+    nav.navbar {
+        flex-wrap: wrap;
+        top: 0.55rem;
+        left: 0.55rem;
+        right: 0.55rem;
+        padding: 0.75rem 1rem;
+    }
+
+    nav.navbar ul,
+    nav.navbar .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    nav.navbar a {
+        font-size: 0.92rem;
+        padding: 0.5rem 0.72rem;
+    }
+}
+
+/* =========================
+   Airbnb-style Footer
+   ========================= */
+.wl-footer {
+    background: #f7f7f7;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 3rem;
+    color: #222222;
+}
+
+.wl-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.2rem 1.25rem 1.2rem;
+}
+
+.wl-footer__brand {
+    margin-bottom: 1.3rem;
+}
+
+.wl-footer__brand h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.wl-footer__brand p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.92rem;
+    max-width: 560px;
+}
+
+.wl-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 1.75rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid #dddddd;
+}
+
+.wl-footer__col h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 0.9rem;
+}
+
+.wl-footer__col a {
+    display: block;
+    width: fit-content;
+    color: #4b5563;
+    text-decoration: none;
+    margin: 0.48rem 0;
+    font-size: 0.91rem;
+    transition: color 0.2s ease;
+}
+
+.wl-footer__col a:hover {
+    color: #111827;
+    text-decoration: underline;
+}
+
+.wl-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.wl-footer__legal,
+.wl-footer__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1rem;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.wl-footer__actions a {
+    color: #374151;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.2s ease;
+}
+
+.wl-footer__actions a:hover {
+    color: #111827;
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .wl-footer__grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .wl-footer__inner {
+        padding: 1.7rem 1rem 1rem;
+    }
+
+    .wl-footer__grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .wl-footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

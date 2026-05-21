@@ -1,0 +1,226 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+  .wl-front-wrap {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .wl-front-hero {
+    background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 55%, #e0f2fe 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    margin-bottom: 2rem;
+  }
+
+  .wl-front-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #0f172a;
+    color: #f8fafc;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .wl-front-title {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    color: #0f172a;
+  }
+
+  .wl-front-subtitle {
+    color: #334155;
+    font-size: 1.05rem;
+    margin-bottom: 1.4rem;
+    max-width: 640px;
+  }
+
+  .wl-front-stat-card,
+  .wl-front-feature-card,
+  .wl-front-step-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    height: 100%;
+  }
+
+  .wl-front-stat-card {
+    padding: 1rem;
+  }
+
+  .wl-front-stat-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+  }
+
+  .wl-front-stat-value {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+  }
+
+  .wl-front-section-title {
+    font-weight: 800;
+    margin-bottom: 0.35rem;
+  }
+
+  .wl-front-section-subtitle {
+    color: #6b7280;
+    margin-bottom: 1.2rem;
+  }
+
+  .wl-front-feature-card,
+  .wl-front-step-card {
+    padding: 1.25rem;
+  }
+
+  .wl-front-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #0f172a;
+    background: #e0f2fe;
+  }
+
+  .wl-front-cta {
+    margin-top: 2rem;
+    background: #111827;
+    color: #f9fafb;
+    border-radius: 18px;
+    padding: 1.7rem 1.3rem;
+  }
+
+  .wl-front-cta p {
+    color: #d1d5db;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    .wl-front-hero {
+      padding: 3.2rem 2.2rem;
+    }
+  }
+</style>
+
+<div class="wl-front-wrap">
+  <section class="wl-front-hero">
+    <span class="wl-front-badge">
+      <i class="fa-solid fa-location-dot"></i>
+      Discover stays you will love
+    </span>
+    <h1 class="wl-front-title">Wanderlist: find your next stay, faster.</h1>
+    <p class="wl-front-subtitle">
+      Explore handpicked homes, cabins, beach retreats, and city stays. Compare prices,
+      check locations, and book your perfect spot in minutes.
+    </p>
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <a href="/listings" class="btn btn-dark px-4">Browse Listings</a>
+      <a href="/listings/create" class="btn btn-outline-dark px-4">Host Your Place</a>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-sm-4">
+        <div class="wl-front-stat-card">
+          <p class="wl-front-stat-label">Cities Covered</p>
+          <p class="wl-front-stat-value">120+</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="wl-front-stat-card">
+          <p class="wl-front-stat-label">Happy Guests</p>
+          <p class="wl-front-stat-value">18k+</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="wl-front-stat-card">
+          <p class="wl-front-stat-label">Avg. Rating</p>
+          <p class="wl-front-stat-value">4.8/5</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-4">
+    <h2 class="wl-front-section-title">Why travelers choose Wanderlist</h2>
+    <p class="wl-front-section-subtitle">
+      Built for both guests and hosts with simple, reliable tools.
+    </p>
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="wl-front-feature-card">
+          <span class="wl-front-icon"><i class="fa-solid fa-filter"></i></span>
+          <h5>Smart discovery</h5>
+          <p class="text-muted mb-0">Find stays by city, budget, and vibe without endless scrolling.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="wl-front-feature-card">
+          <span class="wl-front-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+          <h5>Clear pricing</h5>
+          <p class="text-muted mb-0">Prices are shown in INR format for quick and easy comparison.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="wl-front-feature-card">
+          <span class="wl-front-icon"><i class="fa-solid fa-house-user"></i></span>
+          <h5>Host-friendly</h5>
+          <p class="text-muted mb-0">List your property in minutes with clean forms and simple controls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-3">
+    <h2 class="wl-front-section-title">How it works</h2>
+    <p class="wl-front-section-subtitle">Start your trip in three simple steps.</p>
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="wl-front-step-card">
+          <h5>1. Explore places</h5>
+          <p class="text-muted mb-0">Open all listings and discover destinations that match your plan.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="wl-front-step-card">
+          <h5>2. Check details</h5>
+          <p class="text-muted mb-0">Review price, location, and photos from each listing detail page.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="wl-front-step-card">
+          <h5>3. Start hosting</h5>
+          <p class="text-muted mb-0">Have a space? Add your own listing and share it with travelers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wl-front-cta">
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+      <div>
+        <h4 class="mb-1">Ready for your next getaway?</h4>
+        <p>Browse popular stays now or publish your first listing today.</p>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="/listings" class="btn btn-light">View Listings</a>
+        <a href="/listings/create" class="btn btn-outline-light">Create Listing</a>
+      </div>
+    </div>
+  </section>
+</div>

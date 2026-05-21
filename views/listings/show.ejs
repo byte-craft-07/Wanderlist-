@@ -1,0 +1,116 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row justify-content-center">
+  <div class="col-12 col-md-10 col-lg-8">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="mb-0">Listing Details</h3>
+      <a class="btn btn-outline-dark" href="/listings">Back to listings</a>
+    </div>
+
+    <div class="card shadow-sm border-0 overflow-hidden">
+      <img
+        src="<%= (listing.image && listing.image.url) ? listing.image.url : `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9FjQAmUwLA0YQcOi2bR2ksjq8oKvH9uHu9g&s` %>"
+        class="card-img-top"
+        alt="<%= listing.title %>"
+        style="height: 360px; object-fit: cover;"
+      >
+      <div class="card-body p-4 p-md-5">
+        <h4 class="card-title mb-2"><%= listing.title %></h4>
+        <p class="card-text text-muted mb-4"><%= listing.description %></p>
+
+        <div class="row g-3 mb-4">
+          <div class="col-12 col-md-6">
+            <div class="border rounded-3 p-3 h-100">
+              <p class="text-muted mb-1">Price</p>
+              <p class="mb-0 fw-semibold">&#8377;<%= Number(listing.price).toLocaleString("en-IN") %> / night</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="border rounded-3 p-3 h-100">
+              <p class="text-muted mb-1">Location</p>
+              <p class="mb-0 fw-semibold"><%= listing.location %>, <%= listing.country %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-dark px-4" href="/listings/<%= listing._id %>/edit">Edit Listing</a>
+          <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE" class="m-0">
+            <button class="btn btn-danger px-4" type="submit">Delete Listing</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm border-0 mt-4">
+      <div class="card-body p-4 p-md-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Leave a Review</h5>
+          <span class="text-muted small">Share your experience</span>
+        </div>
+
+        <form method="POST" action="/listings/<%= listing._id %>/reviews">
+          <div class="row g-3">
+            <div class="col-12 col-md-4">
+              <label class="form-label" for="review-rating">Rating</label>
+              <select class="form-select" id="review-rating" name="review[rating]" required>
+                <option value="" selected disabled>Choose</option>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Great</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Okay</option>
+                <option value="1">1 - Poor</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-8">
+              <label class="form-label" for="review-comment">Your Review</label>
+              <textarea
+                class="form-control"
+                id="review-comment"
+                name="review[comment]"
+                rows="4"
+                placeholder="What did you like most?"
+                required
+              ></textarea>
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+              <button class="btn btn-dark px-4" type="submit">Submit Review</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card shadow-sm border-0 mt-4">
+      <div class="card-body p-4 p-md-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Reviews</h5>
+          <span class="text-muted small"><%= listing.reviews ? listing.reviews.length : 0 %> total</span>
+        </div>
+
+        <% if (listing.reviews && listing.reviews.length) { %>
+          <div class="row g-3">
+            <% listing.reviews.forEach((review) => { %>
+              <div class="col-12">
+                <div class="border rounded-3 p-3">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-semibold">Rating</span>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="badge bg-dark"><%= Number(review.rating) %>/5</span>
+                      <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" class="m-0">
+                        <button class="btn btn-outline-danger btn-sm" type="submit">Delete</button>
+                      </form>
+                    </div>
+                  </div>
+                  <p class="mb-0 text-muted"><%= review.comment %></p>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        <% } else { %>
+          <p class="text-muted mb-0">No reviews yet. Be the first to review.</p>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>

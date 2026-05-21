@@ -1,0 +1,41 @@
+<%
+  const successMessages = success && success.length
+    ? (Array.isArray(success) ? success : [success])
+    : [];
+  const errorMessages = typeof error !== "undefined" && error && error.length
+    ? (Array.isArray(error) ? error : [error])
+    : [];
+%>
+
+<% if (successMessages.length || errorMessages.length) { %>
+  <div class="wl-flash-stack">
+    <% if (successMessages.length) { %>
+      <div class="alert alert-dismissible fade show wl-flash wl-flash--success" role="alert">
+        <div class="wl-flash__icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="wl-flash__body">
+          <p class="wl-flash__title">Success</p>
+          <p class="wl-flash__text mb-0"><%= successMessages.join(", ") %></p>
+        </div>
+        <button type="button" class="btn-close wl-flash__close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% } %>
+
+    <% if (errorMessages.length) { %>
+      <div class="alert alert-dismissible fade show wl-flash wl-flash--error" role="alert">
+        <div class="wl-flash__icon">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="wl-flash__body">
+          <p class="wl-flash__title">Something went wrong</p>
+          <p class="wl-flash__text mb-0"><%= errorMessages.join(", ") %></p>
+        </div>
+        <button type="button" class="btn-close wl-flash__close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% } %>
+  </div>
+  
+<% } %>
+
+
